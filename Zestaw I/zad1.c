@@ -4,6 +4,7 @@
 
 #define N_MAX 1000
 
+
 double obliczSuma(double tab[], int len) {
     double sum = 0;
     for (int i = 0; i < len; i++) {
@@ -39,16 +40,13 @@ int main() {
 
     int n = 0;
 
-    do {
-        printf("Podaj ilosc liczb do sredniej: ");
-        scanf("%d", &n);
-    } while (n == 0 || n > N_MAX);
+    double tab[N_MAX];
 
-    double tab[n];
-    for (int i = 0; i < n; i++) {
-        printf("Podaj %d liczbe do sredniej: ", i + 1);
-        scanf("%lf", &tab[i]);
+    printf("Wprowadz liczby do sredniej CTRL+D aby zakonczyc\n");
+    while(scanf("%lf", &tab[n]) == 1 && n + 1 < N_MAX) {
+        n++;
     }
+
 
     double srednia = obliczSrednia(tab, n);
     fprintf(file,"Srednia = %.2lf\n", srednia);
